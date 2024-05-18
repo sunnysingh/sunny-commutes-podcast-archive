@@ -1,3 +1,3 @@
-# Sunny Commutes Static Archive
+# Sunny Commutes Podcast Archive
 
-Archive of sunnycommutes.fm when it was hosted on IronMic.
+Archive of sunnycommutes.fm, which was initially hosted on IronMic.
