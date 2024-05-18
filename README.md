@@ -1,5 +1,19 @@
 # Sunny Commutes Podcast Archive
 
-Archive of sunnycommutes.fm, which was initially hosted on IronMic.
+A static archive site for the Sunny Commutes podcast.
 
-![Podcast Artwork](./source/assets/podcast-art.jpeg)
+<img src="./source/assets/podcast-art.jpeg" width="250" height="250">
+
+## Usage
+
+Compile the site:
+
+```sh
+npm run build
+```
+
+To preview locally, use a static file server like [serve](https://www.npmjs.com/package/serve):
+
+```sh
+npx serve .build-output
+```

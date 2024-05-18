@@ -1,0 +1,3 @@
+- [ ] Create proper favicon
+- [ ] Create a smaller version of the podcast art
+- [ ] Deploy to Cloudflare Pages
