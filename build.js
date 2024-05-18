@@ -6,11 +6,11 @@ const episodes = await fs
   .readFile("./source/data.json", "utf8")
   .then((data) => JSON.parse(data).data);
 
-await fs.mkdir(".build-output", { recursive: true });
 await fs.mkdir(".build-output/episodes", { recursive: true });
 await fs.mkdir(".build-output/assets", { recursive: true });
 
 await fs.cp("./source/assets", "./.build-output/assets", { recursive: true });
+await fs.copyFile("./source/favicon.ico", "./.build-output/favicon.ico");
 
 const sourceIndexHtml = await fs.readFile("./source/index.html", "utf8");
 const sourceEpisodeHtml = await fs.readFile("./source/episode.html", "utf8");
