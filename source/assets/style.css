@@ -25,6 +25,7 @@ main,
 article {
   margin: 0 auto;
   margin-bottom: 8rem;
+  padding: 0 2rem;
   max-width: 650px;
   font-size: 1.2rem;
 }
