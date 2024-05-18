@@ -2,7 +2,7 @@
 
 A static archive site for the Sunny Commutes podcast.
 
-<img src="./source/assets/podcast-art.jpeg" width="250" height="250">
+<img src="./source/assets/podcast-art.png" width="250" height="250">
 
 ## Usage
 
