@@ -1,0 +1,22 @@
+{
+  "name": "sunny-commutes-static-archive",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Archive of sunnycommutes.fm when it was hosted on IronMic.",
+  "scripts": {
+    "build": "node scripts/build",
+    "serve": "serve .build-output"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sunnysingh/sunny-commutes-static-archive.git"
+  },
+  "author": "Sunny Singh",
+  "license": "MIT",
+  "homepage": "https://sunnycommutes.fm/",
+  "dependencies": {
+    "crawlee": "^3.10.0",
+    "playwright": "^1.44.0",
+    "serve": "^14.2.3"
+  }
+}

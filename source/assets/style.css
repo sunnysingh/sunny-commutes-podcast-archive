@@ -1,0 +1,97 @@
+:root {
+  --color-primary: #1d1d25;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 16px;
+  color: #111;
+  background-color: #fdfdfd;
+}
+
+a,
+a:visited {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+a:hover,
+a:focus {
+  text-decoration: none;
+}
+
+main,
+article {
+  margin: 0 auto;
+  margin-bottom: 8rem;
+  max-width: 650px;
+  font-size: 1.2rem;
+}
+
+img {
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding: 2rem;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+  line-height: 1.5;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+h1 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+}
+
+h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+ul {
+  padding-left: 2.5rem;
+}
+
+li:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.art {
+  margin-bottom: 1rem;
+}
+
+.home-link {
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.metadata {
+  margin-bottom: 1rem;
+  color: #777;
+  font-size: 0.8em;
+}
+
+.episodes {
+  padding-left: 0;
+  list-style: none;
+  font-size: 1.5rem;
+}

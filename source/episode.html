@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="shortcut icon" href="/assets/podcast-art.jpeg">
+  <link rel="stylesheet" href="/assets/style.css">
+
+  <title>{TITLE} | Sunny Commutes Podcast</title>
+</head>
+<body>
+  <article>
+    <header>
+      <div class="home-link">
+        <a class="home-link" href="/">Podcast Home</a>
+      </div>
+
+      <h1>{TITLE}</h1>
+
+      <div class="art">
+        <img src="/assets/podcast-art.jpeg" width="250" height="250" alt="Sunny Commutes Podcast" />
+      </div>
+
+      <div class="align-center">
+        <audio controls>
+          <source src="{MEDIA_URL}" type="{MEDIA_TYPE}">
+          <a href="{MEDIA_URL}">Listen to audio</a>
+        </audio>
+      </div>
+    </header>
+  
+    <p class="metadata">Published <time datetime="{DATETIME}">{FORMATTED_DATE}</time></p>
+
+    <div data-external-links>
+      {DESCRIPTION}
+    </div>
+  </article>
+
+  <script>
+    // Ensure episode links do not interrupt media playback.
+    document.querySelectorAll('[data-external-links] a').forEach((link) => {
+      if (!link.hasAttribute('target')) {
+        link.setAttribute('target', '_blank');
+        link.setAttribute('rel', 'noopener');
+      }
+    })
+  </script>
+</body>
+</html>
