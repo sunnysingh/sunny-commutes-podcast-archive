@@ -1,4 +1,5 @@
 import fs from "node:fs/promises";
+import crypto from "node:crypto";
 
 console.info("Building...");
 
@@ -14,6 +15,12 @@ await fs.copyFile("./source/favicon.ico", "./.build-output/favicon.ico");
 
 const sourceIndexHtml = await fs.readFile("./source/index.html", "utf8");
 const sourceEpisodeHtml = await fs.readFile("./source/episode.html", "utf8");
+const sourceStyle = await fs.readFile("./source/assets/style.css", "utf8");
+const styleChecksum = crypto
+  .createHash("sha1")
+  .update(sourceStyle)
+  .digest("hex");
+
 const episodesHtmlItems = [];
 const episodePageCompilers = [];
 
@@ -46,13 +53,16 @@ for (const episode of episodes) {
       year: "numeric",
     }).format(new Date(episode.publishedAt));
 
+    const mediaUrl = `https://media.sunnycommutes.fm/audio/${episode.slug}-${episode.id}.mp3`;
+
     const compiledEpisodeHtml = sourceEpisodeHtml
       .replaceAll("{TITLE}", episode.title)
       .replaceAll("{DESCRIPTION}", description)
       .replaceAll("{DATETIME}", episode.publishedAt)
       .replaceAll("{FORMATTED_DATE}", formattedDate)
       .replaceAll("{MEDIA_TYPE}", episode.mediaType)
-      .replaceAll("{MEDIA_URL}", episode.mediaUrl);
+      .replaceAll("{MEDIA_URL}", mediaUrl)
+      .replaceAll("{STYLE_CHECKSUM}", styleChecksum);
 
     await fs.writeFile(
       `./.build-output/episodes/${episode.slug}-${episode.id}.html`,
@@ -63,10 +73,9 @@ for (const episode of episodes) {
 
 await Promise.all(episodePageCompilers.map((compile) => compile()));
 
-const compiledIndexHtml = sourceIndexHtml.replaceAll(
-  "{EPISODES}",
-  episodesHtmlItems.join("")
-);
+const compiledIndexHtml = sourceIndexHtml
+  .replaceAll("{EPISODES}", episodesHtmlItems.join(""))
+  .replaceAll("{STYLE_CHECKSUM}", styleChecksum);
 
 await fs.writeFile("./.build-output/index.html", compiledIndexHtml);
 
